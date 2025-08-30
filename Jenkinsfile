@@ -1,18 +1,18 @@
 pipeline {
-    agent any
+    agent { label 'jenkins-agent1' }
 
     stages {
-        stage('Stage-1 , clean ws') {
+        stage('clean ws') {
             steps {
                 cleanWs()
             }
         }
-        stage('Stage-2 , Git clone scm') {
+        stage('Git clone scm') {
             steps {
                 git 'https://github.com/khanarshad23/nodejs-on-ec2-youtube.git'
             }
         }
-        stage('Stage-3 , npm install') {
+        stage('npm install') {
             steps {
                 sh 'npm install'
             }
