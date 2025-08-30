@@ -19,6 +19,13 @@ pipeline {
             steps {
                 sh 'npm install'
             }
-        }                
+        }     
+
+         stage('Build') {
+            steps {
+                sh 'npm run build'  // Replace with your actual build command
+            }
+        }  
+        
     }
 }
