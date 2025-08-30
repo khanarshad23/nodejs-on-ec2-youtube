@@ -1,5 +1,8 @@
 pipeline {
     agent { label 'jenkins-agent1' }
+    tools {
+        git 'Git'
+    }
 
     stages {
         stage('clean ws') {
